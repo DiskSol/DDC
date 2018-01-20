@@ -1,5 +1,5 @@
 <?php 
-$servername = "ibmx_e5a5b333b39bf87";
+$servername = "us-cdbr-sl-dfw-01.cleardb.net";
 $username = "b0744edea1cdb6";
 $password = "04159ecc";
 $dbname = "ibmx_e5a5b333b39bf87";
