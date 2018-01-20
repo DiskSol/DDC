@@ -14,6 +14,27 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body>
+        <?php
+        include "dbconfig.php";
+        
+        $name = $_POST['name'];
+        $age = $_POST['age'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $country = $_POST['country'];
+        $city = $_POST['city'];
+        $comment = $_POST['comment'];
+        
+        $query   = "INSERT into firstapply (name,age,phone,email,country,city,comment) 
+        VALUES('" . $name . "','" . $age . "','" . $phone . "',
+        '" . $email . "','" . $country . "','" . $city . "','" . $comment . "')";
+        
+        $success = $conn->query($query);
+        
+        
+        
+        
+        ?>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -25,8 +46,8 @@
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1>Disk Developers Community</h1>
-								<p>DDC (Disk Developers Community) are for developers who are interested in <a href="https://en.wikipedia.org/wiki/Software_engineering_professionalism">Developers Professionalism tactics</a> <br>
+								<h1>Disk Developer Community</h1>
+								<p>Disk Developer Community are for developers who are interested in <a href="https://en.wikipedia.org/wiki/Software_engineering_professionalism">Developers Professionalism tactics</a> <br>
                                     like team work, software engineering approaches, new technologies and tools needed for the workplace.</p>
 							</div>
 						</div>
@@ -100,30 +121,30 @@
 						<!-- Apply -->
 							<article id="apply">
 								<h2 class="major">Apply</h2>
-								<form method="post" action="#">
+								<form method="post" action="#" method="POST">
 									<div class="field half first">
 										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
+										<input type="text" name="name" id="name" required>
 									</div>
                                     
 									<div class="field half">
 										<label>Age</label>
-										<input type="text" name="age" id="age" />
+										<input type="text" name="age" id="age" required>
 									</div>
                                     
                                     <div class="field half first">
 										<label>Phone Number</label>
-										<input type="text" name="phone" id="phone"/>
+										<input type="text" name="phone" id="phone" required>
 									</div>
                                     
                                     <div class="field half">
 										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
+										<input type="text" name="email" id="email" required>
 									</div>
                                     
                                     <div class="field half first">
                                         <label>Country</label>
-                                        <select>
+                                        <select name="country" required>
                                             <option value="sa">Saudi Arabia</option>
                                             <option value="ca">Canada</option>
                                             <option value="ps">Palestine</option>
@@ -133,12 +154,12 @@
                                     
                                     <div class="field half first">
 										<label>City</label>
-										<input type="text" name="city" id="city"/>
+										<input type="text" name="city" id="city" required>
 									</div>
                                     
 									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
+										<label for="message">Comments</label>
+										<textarea name="comment" id="message" rows="4" ></textarea>
 									</div>
                                     
 									<ul class="actions">
